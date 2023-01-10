@@ -1,0 +1,15 @@
+<div class="card">
+    <a href="{{product.get_absolute_url}}">
+        <img style="width: 100%;" src="{{product.image.url}}"
+        alt="">
+    </a>
+    <div class="card-body">
+        <h5 class="card-title">{{product.title}}</h5>
+        <p class="card-text">{{product.info}}</p>
+        <p>
+            {% for cat in product.cats.all %}
+            <a href="{{cat.get_absolute_url}}">{{cat.title}}</a>
+            {% endfor %}
+        </p>
+    </div>
+</div>

@@ -1,0 +1,10 @@
+{% extends 'store/index.html' %}
+
+{% block title %}
+{{product.title}}
+{% endblock %}
+
+{% block content %}
+{% include 'store/includes/product_template.html' %}
+{% include 'store/includes/button_buy.html' %}
+{% endblock %}

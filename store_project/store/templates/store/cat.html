@@ -1,0 +1,20 @@
+{% extends 'store/index.html' %}
+
+{% block title %}
+{{cat.title}}
+{% endblock %}
+
+{% block content %}
+{% if cat.products.all|length == 0 %}
+<h1>There is no product with the category "{{cat.title}}"</h1>
+{% else %}
+<h1>{{cat.title}} Category Products</h1>
+{% for products in products_block %}
+<div class="card-group">
+    {% for product in products %}
+    {% include 'store/includes/product_template.html' %}
+    {% endfor %}
+</div>
+{% endfor %}
+{% endif %}
+{% endblock %}
