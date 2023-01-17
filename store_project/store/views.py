@@ -40,7 +40,7 @@ def save_order(request):
     product = Product.objects.get(pk=request.POST['product_id'])
     order = Order()
     order.name = request.POST['username']
-    order.name = request.POST['user_email']
+    order.email = request.POST['user_email']
     order.product = product
     order.save()
     return render(request, 'store/order.html', context={'product': product})
